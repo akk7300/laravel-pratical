@@ -16,7 +16,7 @@ class FormTableSeeder extends Seeder
     public function run()
     {
         Form::create([
-            'form_name' => 'Test Form'
+            'form_name' => 'Sign Up Form'
         ]);
     }
 }

@@ -11,6 +11,8 @@ class Form extends Model
 {
     use HasFactory, BootUUID;
 
+    protected $fillable = ['form_name'];
+
     public function fields()
     {
         return $this->hasMany(Field::class);

@@ -2,9 +2,9 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\FormController;
-use App\Http\Controllers\LoginController;
-use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\Api\FormController;
+use App\Http\Controllers\Api\LoginController;
+use App\Http\Controllers\Api\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,4 +19,8 @@ use App\Http\Controllers\RegisterController;
 
 Route::post('login', [LoginController::class, 'login']);
 Route::post('register', [RegisterController::class, 'register']);
-Route::get('form/{form:uuid}',[FormController::class,'show']);
+
+Route::get('forms',[FormController::class,'index']);
+Route::get('forms/{form:uuid}',[FormController::class,'show']);
+Route::post('forms',[FormController::class,'store']);
+

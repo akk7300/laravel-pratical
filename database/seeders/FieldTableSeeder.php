@@ -37,14 +37,16 @@ class FieldTableSeeder extends Seeder
 
         Field::create([
             'form_id' => '1',
-            'field_name' => 'Accept on Terms and Condition',
-            'field_type' => 'checkbox'
-        ]);
-
-        Field::create([
-            'form_id' => '1',
             'field_name' => 'Enter your Address',
             'field_type' => 'textarea'
         ]);
+        
+        Field::create([
+            'form_id' => '1',
+            'field_name' => 'Get updated email for us?',
+            'field_type' => 'checkbox'
+        ]);
+
+        
     }
 }

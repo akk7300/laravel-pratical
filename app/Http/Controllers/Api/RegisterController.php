@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use App\Http\Requests\RegisterRequest;
 
 class RegisterController extends Controller
@@ -18,7 +19,8 @@ class RegisterController extends Controller
    
         return response()->json([
             'status' => '200',
-            'messsage' => 'User Register Successfully'
+            'data' => $user,
+            'messsage' => 'User Registered Successfully'
         ]);
     }
 }
