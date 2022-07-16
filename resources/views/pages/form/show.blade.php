@@ -7,6 +7,7 @@
                 <div class="card card-body">
                 <h1>{{ $form->form_name }}</h1>
 
+                @if(!$form->fields->isEmpty())
                 <form method="POST" action="/forms">
 
                     @csrf
@@ -42,6 +43,10 @@
                     @endforeach
                     <button type="submit" class="btn btn-primary mt-3">Submit</button>
                 </form>
+                @else 
+                    <p>No fields on this form.</p]>
+                    <p>Create forms using `[POST] /api/v1/forms/add-fields` </p>
+                @endif
             </div>
             </div>
         </div>

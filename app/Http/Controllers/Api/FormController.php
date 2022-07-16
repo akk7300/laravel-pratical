@@ -14,8 +14,6 @@ use App\Http\Requests\FormStoreRequest;
 
 class FormController extends Controller
 {
-    protected $fieldRepo;
-
     public function index()
     {
         $form = Form::with('fields')->get();
@@ -34,7 +32,7 @@ class FormController extends Controller
         event(new FormCreated($form));
 
         return response()->json([
-            'status' => '200',
+            'status' => 200,
             'data' => new FormResource($form),
             'messsage' => 'Form Created Successfully'
         ],200);
@@ -52,7 +50,7 @@ class FormController extends Controller
         ]);
 
         return response()->json([
-            'status' => '200',
+            'status' => 200,
             'data' => new FieldResource($field),
             'messsage' => 'Field Added Successfully'
         ],200);
