@@ -27,7 +27,14 @@ class AddFieldRequest extends FormRequest
             'form_uuid' => 'required|uuid',
             'name' => 'required|min:3|max:255',
             'value' => 'array',
-            'type' => 'required|string'
+            'type' => 'required|string|in:input,select,radio,textarea,checkbox'
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'type.in' => 'The type field should be only input,select,radio,textarea,checkbox',
         ];
     }
 }

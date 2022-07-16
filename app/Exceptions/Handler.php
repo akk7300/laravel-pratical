@@ -58,7 +58,7 @@ class Handler extends ExceptionHandler
         $this->renderable(function (NotFoundHttpException $e, $request) {
             return response()->json([
                 'status' => 404,
-                'message' => $e->getMessage() ? 'Model Not Found' : 'Route Not Found',
+                'message' => $e->getMessage() ? $e->getMessage() : 'Route Not Found',
             ], 404);          
         });
 
