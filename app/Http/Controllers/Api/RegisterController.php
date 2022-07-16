@@ -21,6 +21,6 @@ class RegisterController extends Controller
             'status' => '200',
             'data' => $user,
             'messsage' => 'User Registered Successfully'
-        ]);
+        ],200);
     }
 }

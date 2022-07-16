@@ -21,6 +21,7 @@ Route::post('login', [LoginController::class, 'login']);
 Route::post('register', [RegisterController::class, 'register']);
 
 Route::get('forms',[FormController::class,'index']);
-Route::get('forms/{form:uuid}',[FormController::class,'show']);
 Route::post('forms',[FormController::class,'store']);
+Route::get('forms/{form:uuid}',[FormController::class,'show']);
+Route::post('forms/add-fields',[FormController::class,'addFields']);
 
