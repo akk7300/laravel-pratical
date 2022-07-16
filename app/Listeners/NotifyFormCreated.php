@@ -30,7 +30,7 @@ class NotifyFormCreated
     {
         Mail::send('emails.form_created', ['data'=>$form], function($message)
         {
-            $message->to('admin@example.com', 'Email Message')->subject('Enquiry From Page!');
+            $message->to('admin@example.com', 'Email Message')->subject('New form created!');
         }); 
     }
 }

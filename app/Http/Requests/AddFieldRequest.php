@@ -26,8 +26,8 @@ class AddFieldRequest extends FormRequest
         return [
             'form_uuid' => 'required|uuid',
             'name' => 'required|min:3|max:255',
-            'value' => 'array',
-            'type' => 'required|string|in:input,select,radio,textarea,checkbox'
+            'type' => 'required|string|in:input,select,radio,textarea,checkbox',
+            'value' => 'array|required_if:type,==,radio|required_if:type,==,select',
         ];
     }
 
