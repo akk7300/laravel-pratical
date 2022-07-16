@@ -8,9 +8,18 @@ use App\Http\Controllers\Controller;
 
 class UserFormController extends Controller
 {
-    public function index(Form $form)
+    public function index()
     {
+        $forms = Form::all();
+
         return view('pages.form.index',with([
+            'forms' => $forms
+        ]));
+    }
+
+    public function show(Form $form)
+    {
+        return view('pages.form.show',with([
             'form' => $form
         ]));
     }

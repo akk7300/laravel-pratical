@@ -14,7 +14,8 @@ use App\Http\Controllers\Web\UserFormController;
 */
 
 
-Route::get('/forms/{form:uuid}',[UserFormController::class,'index']);
+Route::get('/',[UserFormController::class,'index']);
+Route::get('/forms/{form:uuid}',[UserFormController::class,'show']);
 Route::post('/forms',[UserFormController::class,'store']);
 
 

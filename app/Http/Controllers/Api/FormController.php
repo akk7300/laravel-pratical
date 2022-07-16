@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Models\Form;
 use App\Models\Field;
+use App\Events\FormCreated;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\FormResource;
@@ -29,7 +30,9 @@ class FormController extends Controller
     public function store(FormStoreRequest $request)
     {
         $form = Form::create($request->all());
-        
+
+        event(new FormCreated($form));
+
         return response()->json([
             'status' => '200',
             'data' => new FormResource($form),
